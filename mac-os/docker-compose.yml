@@ -1,0 +1,32 @@
+services:
+  cms-db:
+    image: rohitbajaj47/cms-db:latest
+    container_name: cms-db-cont
+    networks:
+      - my-network
+    ports:
+      - "3306:3306"
+
+  cms-api:
+    image: rohitbajaj47/cms-api:latest
+    container_name: cms-api-cont
+    depends_on:
+      - cms-db
+    networks:
+      - my-network
+    ports:
+      - "8080:8080"
+
+  web:
+    image: rohitbajaj47/cms-web:latest
+    container_name: cms-web-cont
+    depends_on:
+      - cms-api
+    networks:
+      - my-network
+    ports:
+      - "4200:4200"
+
+networks:
+  my-network:
+    driver: bridge
