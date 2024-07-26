@@ -1,6 +1,6 @@
 ### To run this app:
 
->Note: you need to have docker engine running
+>Note: you need to have the docker engine running
 
 - Download this repo as a zip folder.
 - if you are on mac, simply open the mac-os folder and launch the terminal from this folder and type `sh start-cms.sh` and this will start the app on localhost:4200
@@ -8,7 +8,7 @@
 - after you have done testing, simply run the cleanup stript depending on your os, this will cleanup any resources created!
 
 
-## About the Project
+### About the Project
 
 The customer management system is a web application developed using Angular, Tailwind CSS, MySQL, and .NET Web API. It provides a user-friendly interface for managing customer data and performing various operations such as adding new customers, updating their information, and deleting records.
 
