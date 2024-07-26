@@ -1,0 +1,26 @@
+name: Publish CMS API
+
+on:
+  push:
+    paths:
+      - "cms-api/**"
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push cms-api
+      working-directory: ./cms-api
+      run: |
+        docker build -t rohitbajaj47/cms-api:latest .
+        docker push rohitbajaj47/cms-api:latest
