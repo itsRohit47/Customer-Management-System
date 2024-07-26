@@ -1,7 +1,6 @@
 @echo off
-
+@REM Stop the containers
 docker-compose down
 
-docker system prune -f
-
-docker system prune --volumes -f
+@REM Remove the network
+docker network rm my-network
