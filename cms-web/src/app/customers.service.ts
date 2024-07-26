@@ -17,7 +17,7 @@ export class CustomersService {
   }
 
   // the api url
-  apiUrl = 'http://localhost:5071/Customer';
+  apiUrl = 'http://localhost:8080/Customer';
 
   // Inject the HttpClient service
   http = inject(HttpClient);
