@@ -1,0 +1,127 @@
+<section class="p-5 w-[360px] lg:w-[500px] bg-zinc-900 text-white">
+  <form (ngSubmit)="addCustomer()" [formGroup]="contactForm">
+    <!-- Add Customer Title -->
+    <h1 class="text-xl font-bold">Add Customer</h1>
+    <br />
+    <div class="grid gap-5 text-sm">
+      <div class="flex flex-col">
+        <!-- First Name Label -->
+        <label for="fname" class=""
+          >First Name <span class="text-red-500">*</span></label
+        >
+        <!-- First Name Input -->
+        <input
+          type="text"
+          required
+          id="fname"
+          name="fname"
+          formControlName="firstName"
+          placeholder="John"
+          class="mt-1 bg-zinc-100/25 rounded-lg p-2 gap-2 w-full items-center border-2 border-gray-50/25 focus:outline-none"
+        />
+        <!-- First Name Error Message -->
+        <div
+          *ngIf="
+            firstName?.invalid &&
+            firstName?.dirty &&
+            contactForm.status === 'INVALID'
+          "
+          class="text-sm text-red-500"
+        >
+          First Name is a required field.
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <!-- Last Name Label -->
+        <label for="lname">Last Name<span class="text-red-500">*</span> </label>
+        <!-- Last Name Input -->
+        <input
+          type="text"
+          required
+          id="lname"
+          name="lname"
+          placeholder="Doe"
+          formControlName="lastName"
+          class="mt-1 bg-zinc-100/25 rounded-lg p-2 gap-2 w-full items-center border-2 border-gray-50/25 focus:outline-none"
+        />
+        <!-- Last Name Error Message -->
+        <div
+          *ngIf="
+            lastName?.invalid &&
+            lastName?.dirty &&
+            contactForm.status === 'INVALID'
+          "
+          class="text-sm text-red-500"
+        >
+          Last Name is a required field.
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <!-- Email Label -->
+        <label for="email">Email</label>
+        <!-- Email Input -->
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="johndoe@example.com"
+          formControlName="email"
+          class="mt-1 bg-zinc-100/25 rounded-lg p-2 gap-2 w-full items-center border-2 border-gray-50/25 focus:outline-none"
+        />
+        <!-- Email Error Message -->
+        <div
+          *ngIf="
+            email?.dirty && email?.invalid && contactForm.status === 'INVALID'
+          "
+          class="text-sm text-red-500"
+        >
+          wrong email format
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <!-- Phone Label -->
+        <label for="phone">Phone</label>
+        <!-- Phone Input -->
+        <input
+          type="tel"
+          id="phone"
+          placeholder="04xx xxx xxx"
+          name="phone"
+          formControlName="phone"
+          class="mt-1 bg-zinc-100/25 rounded-lg p-2 gap-2 w-full items-center border-2 border-gray-50/25 focus:outline-none"
+        />
+      </div>
+      <!-- Required Fields Note -->
+      <span
+        class="text-sm flex items-start justify-start gap-1 font-semibold"
+      ></span>
+      >
+      <div class="flex gap-2 items-end justify-end text-sm">
+        <button
+          (click)="closeDialog()"
+          type="button"
+          class="border px-2 py-1 rounded-lg flex items-center gap-1 hover:bg-gray-100/25"
+        >
+          <span>Cancel</span>
+        </button>
+
+        @if (this.contactForm.status === 'VALID') {<button
+          type="submit"
+          class="border border-green-500 px-2 py-1 bg-green-600 hover:bg-green-700 rounded-lg flex items-center gap-1 text-white"
+        >
+          <span>Add Customer</span></button
+        >}@else {
+        <div>
+          <div
+            class="border border-gray-100/25 px-2 py-1 bg-gray-600 rounded-lg flex items-center gap-1 text-white"
+          >
+            <span>Add Customer</span>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </form>
+</section>

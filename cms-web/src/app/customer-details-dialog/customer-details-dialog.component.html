@@ -1,0 +1,68 @@
+<div class="p-5 bg-zinc-900 text-white border-none">
+  <!-- Customer Details heading -->
+  <h1 class="font-bold text-lg">Customer Details</h1>
+  <br />
+  <div class="grid grid-cols-2 gap-x-20 gap-y-5 mb-10">
+    <div>
+      <!-- First Name label -->
+      <span class="text-xs">First Name</span>
+      <!-- First Name value -->
+      <h1 class="font-normal text-base lg:text-lg">{{ fname }}</h1>
+    </div>
+    <div>
+      <!-- Last Name label -->
+      <span class="text-xs">Last Name</span>
+      <!-- Last Name value -->
+      <h1 class="font-normal text-base lg:text-lg">{{ lname }}</h1>
+    </div>
+    <div>
+      <!-- Email label -->
+      <span class="text-xs">Email</span>
+      <!-- Email value -->
+      <h1 class="font-normal text-base lg:text-lg">{{ email }}</h1>
+    </div>
+    <div>
+      <!-- Phone label -->
+      <span class="text-xs">Phone</span>
+      <!-- Phone value -->
+      <h1 class="font-normal text-base lg:text-lg">{{ phone }}</h1>
+    </div>
+  </div>
+  <div class="flex gap-2 items-end justify-end text-sm">
+    <!-- Close button -->
+    <button
+      class="border px-2 py-1 rounded-lg border-gray-100/25 hover:bg-gray-100/25"
+      (click)="closePopup()"
+    >
+      Close
+    </button>
+    <!-- Update button -->
+    <button
+      class="border px-2 py-1 rounded-lg border-violet-500 bg-violet-600 hover:bg-violet-700"
+      (click)="updateCustomer()"
+    >
+      Update
+    </button>
+    <!-- Delete button -->
+    <button
+      (click)="deleteCustomer()"
+      class="border border-red-500 px-2 py-1 bg-red-600 hover:bg-red-700 rounded-lg flex items-center gap-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-4"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+        />
+      </svg>
+      <span> Delete</span>
+    </button>
+  </div>
+</div>
