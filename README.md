@@ -1,3 +1,8 @@
+### Customer management system
+
+Managing millions of awesome customers is hard, but not when you use mine. Built for success using the latest tools and technologies.
+
+
 ### Preview
 <img width="1275" alt="Screenshot 2024-08-16 at 8 39 36 AM" src="https://github.com/user-attachments/assets/16ffad0c-ce1b-40bd-9e43-d2cfb7f44dd8">
 <img width="1269" alt="Screenshot 2024-08-16 at 8 40 00 AM" src="https://github.com/user-attachments/assets/64124820-5d95-4217-9468-9810643c16bc">
